@@ -2,7 +2,17 @@ def checkio(array):
     """
         sums even-indexes elements and multiply at the last
     """
-    return 0
+    result = 0
+    for index, value in enumerate(array):
+        if index % 2 == 0:
+            result += value
+
+    try:
+        result *= array[-1]
+    except IndexError:
+        pass
+
+    return result
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
